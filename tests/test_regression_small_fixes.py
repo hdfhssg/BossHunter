@@ -751,6 +751,10 @@ class ConfigSchemaTests(unittest.TestCase):
         self.assertEqual(enabled["type"], "switch")
         self.assertIs(enabled["default"], False)
 
+    def test_profile_exposes_greeting_preference(self):
+        profile = next(section for section in self.schema["sections"] if section["key"] == "profile")
+        fields = {field["key"]: field for field in profile["fields"]}
+        self.assertEqual(fields["greeting_preference"]["type"], "textarea")
 
 class ScorerPrefilterTests(unittest.TestCase):
     def setUp(self):
