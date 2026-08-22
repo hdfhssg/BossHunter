@@ -644,7 +644,7 @@ export default function DashboardPage({ view = 'workbench' }: DashboardPageProps
                     <Button
                       size="sm"
                       variant="secondary"
-                      onClick={() => { window.location.href = '/config' }}
+                      onClick={() => { window.location.href = '/config?section=throttle' }}
                     >
                       去设置发送额度
                     </Button>
@@ -665,7 +665,7 @@ export default function DashboardPage({ view = 'workbench' }: DashboardPageProps
                 今日已发送 {workbench.send_quota.sent}/{workbench.send_quota.daily_limit} 条，未发送岗位已保留在“待发送招呼语”；明日额度恢复后再重试。
               </p>
             </div>
-            <Button variant="secondary" size="sm" onClick={() => { window.location.href = '/config' }}>
+            <Button variant="secondary" size="sm" onClick={() => { window.location.href = '/config?section=throttle' }}>
               去设置发送额度
             </Button>
           </div>
